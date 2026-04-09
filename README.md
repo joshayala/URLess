@@ -2,6 +2,8 @@
 
 **Less is more.** A clean, minimal URL shortener built with Laravel. Paste a long URL, get a short link, and track clicks — all from a single dark-themed dashboard.
 
+**[Try it live →](https://urless-production.up.railway.app/)**
+
 ---
 
 ## Features
