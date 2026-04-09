@@ -25,16 +25,32 @@
 
 ### Prerequisites
 
-- PHP 8.3+
+- [Homebrew](https://brew.sh) (macOS package manager)
+- PHP 8.4+
 - Composer
-- Node.js & npm
-- A database (SQLite works out of the box)
+- Node.js 20.19+ & npm
+- PostgreSQL
+
+### Install Dependencies (macOS)
+
+If you don't have Homebrew installed:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+Then install the required services:
+
+```bash
+brew install php@8.4 composer node postgresql@16
+brew services start postgresql@16
+```
 
 ### Steps
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/urless.git
+git clone https://github.com/joshayala/urless.git
 cd urless
 
 # Install PHP dependencies
@@ -44,8 +60,16 @@ composer install
 cp .env.example .env
 php artisan key:generate
 
-# Create the SQLite database (or configure another driver in .env)
-touch database/database.sqlite
+# Create the PostgreSQL database
+createdb urless
+
+# Update .env with your database credentials
+# DB_CONNECTION=pgsql
+# DB_HOST=127.0.0.1
+# DB_PORT=5432
+# DB_DATABASE=urless
+# DB_USERNAME=your_username
+# DB_PASSWORD=
 
 # Run migrations
 php artisan migrate
@@ -123,8 +147,8 @@ The app will be available at `http://localhost:8000` (or your configured Herd do
 | Layer       | Technology                                                        |
 |-------------|-------------------------------------------------------------------|
 | Framework   | [Laravel 13](https://laravel.com)                                 |
-| Language    | PHP 8.3+                                                          |
-| Database    | SQLite (default) — supports MySQL, PostgreSQL, etc.               |
+| Language    | PHP 8.4+                                                          |
+| Database    | [PostgreSQL](https://www.postgresql.org)                           |
 | Frontend    | Blade templates, [Tailwind CSS 4](https://tailwindcss.com)        |
 | Build Tool  | [Vite 8](https://vitejs.dev) with [Laravel Vite Plugin](https://github.com/laravel/vite-plugin) |
 | Icons       | [Font Awesome 6](https://fontawesome.com)                         |
