@@ -2,7 +2,9 @@
 
 **Less is more.** A clean, minimal URL shortener built with Laravel. Paste a long URL, get a short link, and track clicks — all from a single dark-themed dashboard.
 
-**[Try it live →](https://urless-production.up.railway.app/)**
+**[Try it live →](https://urless.laravel.cloud/)**
+
+Deployed on [Laravel Cloud](https://cloud.laravel.com).
 
 ---
 
@@ -156,6 +158,16 @@ The app will be available at `http://localhost:8000` (or your configured Herd do
 | Icons       | [Font Awesome 6](https://fontawesome.com)                         |
 | Fonts       | [Inter](https://rsms.me/inter/), [Space Mono](https://fonts.google.com/specimen/Space+Mono) |
 | Testing     | [Pest](https://pestphp.com)                                       |
+
+---
+
+## Deployment
+
+This app is deployed on [Laravel Cloud](https://cloud.laravel.com) with:
+
+- **PHP 8.4** via FrankenPHP (managed by Laravel Cloud)
+- **PostgreSQL 17** (Laravel Serverless Postgres)
+- **Auto-deploy** on push to `main`
 
 ---
 
